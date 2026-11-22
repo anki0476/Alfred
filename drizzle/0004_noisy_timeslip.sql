@@ -1,0 +1,1 @@
+CREATE INDEX `request_budgets_expiry` ON `request_budgets` (`expires_at`);

@@ -1,0 +1,113 @@
+.alfred-landing{--alfred-ink:#20211e;--alfred-muted:#73766d;--alfred-accent:#475cda;position:relative;isolation:isolate;min-height:850px;height:100svh;overflow:hidden;padding:42px 4%;background:radial-gradient(ellipse at 50% 48%,#fff 0%,#fafaf8 70%);color:var(--alfred-ink);font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.alfred-landing *{box-sizing:border-box}
+.alfred-landing a{color:inherit;text-decoration:none}
+.alfred-landing button{font:inherit;color:inherit;cursor:pointer}
+.alfred-landing button,.alfred-landing a{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.alfred-landing :is(button,a):focus-visible{outline:2px solid var(--alfred-accent);outline-offset:6px}
+.alfred-landing ::selection{background:#dce2ff}
+.alfred-header{position:relative;z-index:3;display:flex;justify-content:space-between;pointer-events:none}
+.alfred-identity,.alfred-nav{pointer-events:auto}
+.alfred-wordmark{display:inline-block;font-size:32px;line-height:1;font-weight:700;letter-spacing:-2px}
+.alfred-wordmark span,.alfred-identity h1 span{color:var(--alfred-accent)}
+.alfred-eyebrow{display:block;color:var(--alfred-muted);font-size:14px;line-height:1.5;font-weight:400}
+.alfred-identity>.alfred-eyebrow{margin:23px 0 13px}
+.alfred-identity h1{font-size:clamp(42px,4.1vw,68px);font-weight:500;line-height:1.01;letter-spacing:-.065em;margin:0;position:relative;z-index:1;white-space:nowrap}
+.alfred-scribble{position:absolute;width:300px;height:65px;top:194px;left:1px;pointer-events:none;fill:none;stroke:#a3b0e3;opacity:.43;stroke-width:6;stroke-linecap:round}
+.alfred-nav{display:flex;flex-direction:column;align-items:flex-end;gap:13px;padding-top:5px}
+.alfred-nav a,.alfred-nav button{font-size:14px;line-height:1.5;text-transform:uppercase;background:none;border:0;padding:2px 0;color:var(--alfred-muted);transition:color .2s}
+.alfred-nav a[aria-current],.alfred-nav a:hover,.alfred-nav button:hover{color:var(--alfred-ink)}
+.alfred-nav .alfred-nav-study{color:var(--alfred-accent);margin-top:7px}
+.alfred-nav-study span{display:none}
+.alfred-centerpiece{position:absolute;inset:170px 0 200px;z-index:1;animation:alfred-arrive .8s ease-out both}
+.alfred-landing .computer-mount{position:relative;width:100%;height:100%}
+.alfred-landing .computer-mount canvas{display:block;width:100%;height:100%;touch-action:pan-y;outline:none}
+.alfred-landing .computer-mount canvas:focus-visible{outline:1px dashed #919edb;outline-offset:-20px}
+.alfred-side-note{position:absolute;left:4%;top:48%;display:flex;align-items:flex-start;gap:14px;z-index:2;pointer-events:none}
+.alfred-side-note p{font-size:16px;line-height:1.65;color:var(--alfred-muted);margin:0}
+.alfred-asterisk{color:var(--alfred-accent);font-size:28px;line-height:1.2}
+.alfred-hello{position:absolute;left:calc(50% + 225px);top:calc(41% - 28px);width:210px;transform:rotate(-7deg);pointer-events:none;z-index:2}
+.alfred-handwriting{font:italic 20px/1.25 Georgia,serif;color:#808a77}
+.alfred-hello svg{display:block;width:90px;height:60px;fill:none;stroke:#98a18f;stroke-width:1.6;stroke-linecap:round;margin-left:12px}
+.alfred-start{position:absolute;bottom:149px;left:50%;transform:translateX(-50%);z-index:3;text-align:center;white-space:nowrap}
+.alfred-keyboard-hint{font-size:14px;line-height:1.5;color:var(--alfred-muted);margin:0 0 16px;display:flex;align-items:center;justify-content:center;gap:9px}
+.alfred-keyboard-hint>span{font-size:24px;line-height:1}
+.alfred-landing .alfred-primary{display:inline-flex;justify-content:center;align-items:center;gap:35px;padding:13px 22px;background:#263c32;color:#fafff4;border:1px solid #263c32;border-radius:6px;font-size:16px;line-height:1.5;transition:background .2s,transform .2s;box-shadow:0 3px 0 #d9dfd4}
+.alfred-landing .alfred-primary:hover{background:#354d40;transform:translateY(-2px)}
+.alfred-enter{font-family:monospace;color:#c7d6c3;font-size:18px}
+.alfred-start-note{font-size:13px;color:var(--alfred-muted);margin:13px 0 0}
+.alfred-footer{position:absolute;bottom:29px;left:4%;right:4%;display:grid;grid-template-columns:1.05fr 1.15fr 1.15fr .65fr;gap:30px;align-items:start;z-index:3}
+.alfred-meta{border-top:1px solid #d9dbd3;padding-top:12px}
+.alfred-meta .alfred-eyebrow{text-transform:uppercase;font-size:13px;letter-spacing:.02em}
+.alfred-meta p{font-size:14px;line-height:1.5;margin:9px 0 0}
+.alfred-controls{display:flex;align-items:flex-end;flex-direction:column;gap:14px;padding-top:10px}
+.alfred-controls button{border:0;background:none;padding:0;color:var(--alfred-muted);font-size:13px;display:flex;align-items:center;gap:12px;min-height:24px}
+.alfred-controls button:hover{color:var(--alfred-ink)}
+.alfred-controls button>span:not(.alfred-sound-bars){font-size:18px;color:var(--alfred-ink)}
+.alfred-sound-bars{display:flex;align-items:center;gap:3px;height:16px}
+.alfred-sound-bars i{width:2px;height:5px;background:#7b8475}
+.alfred-sound-bars i:nth-child(2){height:13px}.alfred-sound-bars i:nth-child(3){height:9px}
+.alfred-controls button[aria-pressed=true] .alfred-sound-bars i{background:#475cda;animation:alfred-bars .7s ease-in-out infinite alternate}
+.alfred-controls button[aria-pressed=true] .alfred-sound-bars i:nth-child(2){animation-delay:.2s}
+.alfred-dialog{position:fixed;inset:0;margin:auto;width:min(580px,calc(100% - 32px));max-height:calc(100svh - 40px);overflow:auto;border:1px solid #d9dbd3;border-radius:12px;padding:44px;background:#fafaf8;color:var(--alfred-ink);box-shadow:0 30px 130px #202a2120}
+.alfred-dialog::backdrop{background:#f5f6f0a8;backdrop-filter:blur(10px)}
+.alfred-dialog-close{position:absolute;right:18px;top:10px;font-size:30px!important;border:0;background:none;padding:3px 9px}
+.alfred-dialog h2{font-size:42px;line-height:1.08;letter-spacing:-.045em;font-weight:500;margin:25px 0 28px}
+.alfred-steps section{display:flex;gap:18px;padding:18px 0;border-top:1px solid #dddfd7}
+.alfred-steps section>span{color:var(--alfred-accent);font-size:24px;min-width:25px}
+.alfred-steps h3{font-size:17px;font-weight:500;margin:0 0 6px}.alfred-steps p,.alfred-about-copy p{font-size:16px;line-height:1.6;color:#686e62;margin:0}
+.alfred-about-copy p{margin:0 0 18px}.alfred-about-copy .alfred-about-prompt{font-style:italic;color:#475c69}
+.alfred-dialog .alfred-primary{margin-top:20px}
+.alfred-skip{position:absolute;left:20px;top:-70px;z-index:10;background:white;padding:12px}.alfred-skip:focus{top:10px}
+.alfred-fallback{position:absolute;width:310px;left:50%;top:50%;transform:translate(-50%,-50%);border:18px solid #d9d6c3;background:#dedbca;border-radius:23px;box-shadow:9px 15px 0 #c9c5ae,0 28px 35px #252f2520}
+.alfred-fallback>div{background:#173c34;border:5px solid #485346;border-radius:9px;padding:22px 16px;min-height:190px;color:#e1f2d3;font:13px/1.7 monospace}.alfred-fallback strong{display:block;font-size:17px;margin:16px 0 8px}.alfred-fallback span{font-size:10px}.alfred-fallback footer{height:50px;padding:14px 0 0;text-align:center;color:#a4a58e;letter-spacing:4px}
+@keyframes alfred-arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes alfred-bars{to{transform:scaleY(.45)}}
+@media(min-width:1600px){.alfred-centerpiece{inset:160px 0 205px}.alfred-hello{left:calc(50% + 260px)}}
+@media(max-width:1100px){.alfred-side-note{display:none}.alfred-hello{left:calc(50% + 190px);width:165px}.alfred-footer{gap:24px;grid-template-columns:1fr 1fr 1fr}.alfred-footer-sign{display:none}.alfred-centerpiece{inset:185px -60px 200px}.alfred-identity h1{font-size:51px}.alfred-scribble{top:193px}}
+@media(max-width:700px){.alfred-landing{height:100svh;min-height:900px;padding:26px 24px}.alfred-wordmark{font-size:29px}.alfred-identity>.alfred-eyebrow{font-size:13px;max-width:180px;line-height:1.5;margin-top:26px;margin-bottom:12px}.alfred-identity h1{font-size:45px}.alfred-scribble{top:205px;width:245px}.alfred-nav{gap:10px;padding-top:0}.alfred-nav a,.alfred-nav button{font-size:12px;padding:4px 0;min-height:27px}.alfred-nav .alfred-nav-study{margin-top:0}.alfred-centerpiece{inset:270px -145px 268px}.alfred-hello{display:none}.alfred-start{bottom:170px}.alfred-keyboard-hint{font-size:13px;margin-bottom:13px}.alfred-start-note{font-size:12px}.alfred-footer{left:24px;right:24px;bottom:22px;gap:16px;grid-template-columns:1fr 1fr}.alfred-meta .alfred-eyebrow{font-size:12px}.alfred-meta p{font-size:13px}.alfred-controls{grid-column:1/-1;flex-direction:row;justify-content:space-between;padding-top:2px;gap:10px}.alfred-controls button{font-size:12px}.alfred-dialog{padding:38px 26px}.alfred-dialog h2{font-size:36px}.alfred-fallback{width:280px}}
+@media(max-width:430px){.alfred-identity h1{font-size:clamp(34px,10.3vw,44px)}.alfred-nav{flex-shrink:0}.alfred-nav a,.alfred-nav button{white-space:nowrap}.alfred-scribble{top:196px;width:225px}}
+@media(max-width:370px){.alfred-landing{padding-left:18px;padding-right:18px}.alfred-identity h1{font-size:34px}.alfred-footer{left:18px;right:18px}.alfred-nav a,.alfred-nav button{font-size:11px}.alfred-identity>.alfred-eyebrow{max-width:165px}}
+.alfred-faq{position:relative;display:grid;grid-template-columns:1fr 1.25fr;column-gap:9%;padding:110px 7% 0;background:#f2f3ed;border-top:1px solid #dedfd6;color:#20211e;font:16px/1.6 Arial,Helvetica,sans-serif;scroll-margin-top:20px}
+.alfred-faq *{box-sizing:border-box}.alfred-faq a{color:inherit;text-decoration:none}.alfred-faq :is(a,summary):focus-visible{outline:2px solid #475cda;outline-offset:6px}
+.alfred-faq-intro h2{font-weight:500;font-size:clamp(40px,4vw,60px);letter-spacing:-.055em;line-height:1.05;margin:22px 0}.alfred-faq-intro h2 span{color:#475cda}.alfred-faq-intro>p{color:#73766d;font-size:16px;margin:0}.alfred-faq .alfred-eyebrow{font-size:14px;color:#73766d}.alfred-faq-mark{font:italic 150px/1 Georgia,serif;color:#a8b3de;transform:rotate(-14deg);width:120px;text-align:center;margin:35px 0;opacity:.65}
+.alfred-faq-list details{border-top:1px solid #ced2c5}.alfred-faq-list details:last-of-type{border-bottom:1px solid #ced2c5}.alfred-faq-list summary{display:flex;gap:25px;justify-content:space-between;align-items:center;cursor:pointer;padding:23px 0;list-style:none;font-size:17px;line-height:1.5}.alfred-faq-list summary::-webkit-details-marker{display:none}.alfred-faq-list summary>span{flex:none;width:18px;height:18px;position:relative}.alfred-faq-list summary>span::before,.alfred-faq-list summary>span::after{content:"";position:absolute;left:1px;top:8px;height:1px;width:16px;background:#737c68}.alfred-faq-list summary>span::after{transform:rotate(90deg)}.alfred-faq-list details[open] summary>span::after{transform:rotate(0)}.alfred-faq-list details[open] summary{color:#3d5142}.alfred-faq-list details>p{margin:0;padding:0 32px 24px 0;color:#646d5d;font-size:16px;line-height:1.75}.alfred-faq-start{display:block;font-size:14px;margin-top:30px;color:#73766d!important}.alfred-faq-start span{display:inline-block;margin-left:8px;color:#263c32;border-bottom:1px solid #a6b29d}
+.alfred-faq-footer{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #ced2c5;margin-top:90px;padding:25px 0}.alfred-faq-footer>a:first-child{font-size:28px;font-weight:700;letter-spacing:-1.7px}.alfred-faq-footer>a:first-child span{color:#475cda}.alfred-faq-footer p,.alfred-faq-footer>a:last-child{font-size:13px;color:#73766d}.alfred-faq-footer p{margin:0}
+@media(max-width:700px){.alfred-faq{grid-template-columns:1fr;padding:65px 24px 0;gap:35px}.alfred-faq-intro h2{font-size:42px}.alfred-faq-mark{display:none}.alfred-faq-list summary{font-size:16px;padding:21px 0}.alfred-faq-list details>p{padding-right:12px}.alfred-faq-footer{margin-top:20px;gap:18px}.alfred-faq-footer p{display:none}.alfred-faq-start span{margin-left:0;display:table}}
+@media(prefers-reduced-motion:reduce){.alfred-landing *,.alfred-landing *::before,.alfred-landing *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.alfred-identity h1 .alfred-title-annotation{color:inherit}.alfred-title-annotation>svg{color:#a3b0e3;opacity:.65}.alfred-hello .alfred-arrow-annotation{display:block;width:90px;height:48px;margin-left:12px}.alfred-hello .alfred-arrow-annotation>svg{position:absolute;inset:14px 0 auto;width:90px;height:22px;margin:0;transform:rotate(160deg);stroke:none}
+
+.alfred-landing .alfred-primary.alfred-pop{font-weight:400;text-transform:none;border:2px solid #263c32;box-shadow:0 12px 0 -2px #8da395,0 12px 0 0 #263c32,0 22px 0 0 #e4e9df;transition:transform .15s ease,box-shadow .15s ease,background .15s ease}.alfred-landing .alfred-primary.alfred-pop:hover{transform:translateY(4px);box-shadow:0 8px 0 -2px #8da395,0 8px 0 0 #263c32,0 16px 0 0 #e4e9df}.alfred-landing .alfred-primary.alfred-pop:active{transform:translateY(12px);box-shadow:0 0 0 -2px #8da395,0 0 0 0 #263c32,0 0 0 0 #e4e9df}.alfred-start:has(.alfred-pop) .alfred-start-note{margin-top:34px}
+
+.alfred-hello .alfred-arrow-annotation{width:100px;height:115px;margin:0 0 0 8px}.alfred-hello .alfred-arrow-annotation>svg{inset:0;width:100%;height:100%;transform:scaleX(-1);stroke:none}
+
+.alfred-start{bottom:160px}.alfred-keyboard-hint{margin-bottom:18px}@media(max-width:700px){.alfred-start{bottom:185px}}
+.alfred-header,.alfred-side-note,.alfred-hello,.alfred-start,.alfred-footer,.alfred-faq{transition:opacity .45s ease,filter .45s ease}.alfred-centerpiece{transition:transform 1.2s cubic-bezier(.22,.8,.25,1);animation:none;will-change:transform}
+.is-meeting .alfred-landing{position:fixed;inset:0;z-index:100;height:var(--meet-height);min-height:var(--meet-height);perspective:1200px}
+.is-meeting :is(.alfred-header,.alfred-side-note,.alfred-hello,.alfred-start,.alfred-footer,.alfred-faq){opacity:0;filter:blur(6px);pointer-events:none}
+.is-meeting .alfred-centerpiece{transform:translate(var(--meet-x),var(--meet-y)) scale(1.3);pointer-events:none;opacity:1}.is-meeting .computer-mount canvas{pointer-events:none}
+.alfred-meet{position:fixed;inset:0;z-index:5;pointer-events:none}.alfred-meet button,.alfred-meet a{pointer-events:auto}.alfred-meet-close{position:absolute;right:4%;top:35px;border:1px solid #d9ded3;background:#fafbf7;border-radius:30px;padding:10px 20px;gap:16px;color:#52604e;display:flex;align-items:center}.alfred-meet-close span{font-size:24px;line-height:1}
+.alfred-meet-story{position:absolute;right:6%;top:50%;transform:translateY(-50%);width:38%;max-height:calc(100dvh - 130px);overflow:auto;pointer-events:auto;animation:meet-story-in 1.2s both}
+.alfred-chapters{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px}.alfred-chapters button{padding:0 0 6px;background:none;border:0;border-bottom:1px solid transparent;font-size:13px;color:#858b80;border-radius:0}.alfred-chapters button[aria-current]{color:#425a48;border-color:#82947b}
+.alfred-meet h2{font-size:clamp(36px,3.8vw,60px);line-height:1.08;letter-spacing:-.055em;font-weight:500;margin:0 0 28px}.alfred-meet h2 span{color:inherit}
+.alfred-typewriter{font:17px/1.85 Arial,Helvetica,sans-serif;color:#626e5e;min-height:240px;margin:0}.alfred-type-cursor{color:#475cda;animation:meet-cursor 1s step-end infinite}
+.alfred-meet-actions{display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin-top:24px}.alfred-meet-actions button{background:none;border:0;padding:10px 0;font-size:14px;color:#65755e}.alfred-meet-actions button:disabled{opacity:.35;cursor:default}.alfred-meet-actions .alfred-meet-next{margin-left:auto;background:#263c32;color:#fafff4;padding:12px 20px;border-radius:6px;font-size:15px}
+.alfred-accessible-copy{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@keyframes meet-story-in{0%,45%{opacity:0;filter:blur(5px)}100%{opacity:1;filter:blur(0)}}@keyframes meet-cursor{50%{opacity:0}}
+@media(max-width:760px){.is-meeting .alfred-centerpiece{transform:translate(var(--meet-x),var(--meet-y)) scale(.92)}.alfred-meet-close{top:16px;right:18px;padding:6px 14px;font-size:13px}.alfred-meet-story{top:39dvh;bottom:20px;left:7%;right:7%;width:auto;transform:none;max-height:none}.alfred-chapters{gap:12px;margin-bottom:22px}.alfred-chapters button{font-size:12px}.alfred-meet h2{font-size:36px;margin-bottom:20px}.alfred-typewriter{font-size:16px;line-height:1.7;min-height:230px}.alfred-meet-actions{margin-top:18px}}
+@media(prefers-reduced-motion:reduce){.alfred-centerpiece,.alfred-meet-story{transition:none!important;animation:none!important}.alfred-type-cursor{animation:none}}
+
+.alfred-meet .alfred-meet-close{width:44px;height:44px;padding:0;justify-content:center;border-radius:50%;gap:0}
+/* Match the FAQ question mark's soft lavender, with a darker 3D edge. */
+.alfred-landing #start-learning .alfred-primary.alfred-pop{background:#c2c9e3;color:#252838;border-color:#737fa9;box-shadow:0 12px 0 -2px #9ba6cd,0 12px 0 0 #737fa9,0 22px 0 0 #e6e8f1}
+.alfred-landing #start-learning .alfred-primary.alfred-pop:hover{background:#cdd3e9;box-shadow:0 8px 0 -2px #9ba6cd,0 8px 0 0 #737fa9,0 16px 0 0 #e6e8f1}
+.alfred-landing #start-learning .alfred-primary.alfred-pop:active{background:#c2c9e3;box-shadow:0 0 0 -2px #9ba6cd,0 0 0 0 #737fa9,0 0 0 0 #e6e8f1}
+.alfred-landing #start-learning .alfred-enter{color:inherit}
+/* Spread the three footer notes across the full landing width. */
+@media(min-width:701px){.alfred-footer{grid-template-columns:repeat(3,minmax(0,1fr))}.alfred-footer>.alfred-meta:nth-child(2){text-align:center}.alfred-footer>.alfred-footer-sign{display:block;text-align:right}}
+html:has(.alfred-experience){scroll-behavior:smooth}
+.alfred-how{display:grid;grid-template-columns:1fr 1.25fr;gap:9%;padding:110px 7%;border-top:1px solid #dedfd6;color:#20211e;background:#fafaf8;font:16px/1.6 Arial,Helvetica,sans-serif;scroll-margin-top:20px}
+.alfred-how h2{font-size:clamp(40px,4vw,60px);font-weight:500;letter-spacing:-.055em;line-height:1.05;margin:22px 0}.alfred-how h2 span{color:#475cda}.alfred-how>div>p{color:#73766d}.alfred-how .alfred-steps{margin:0}.alfred-how .alfred-steps section{padding:24px 0;border-top:1px solid #ced2c5}.alfred-how h3{font-size:21px;font-weight:500}.is-meeting .alfred-how{opacity:0;pointer-events:none}
+@media(max-width:700px){.alfred-how{grid-template-columns:1fr;padding:65px 24px;gap:35px}}
+@media(prefers-reduced-motion:reduce){html:has(.alfred-experience){scroll-behavior:auto}}
+.alfred-how{padding-bottom:48px}.alfred-faq{padding-top:55px}@media(max-width:700px){.alfred-how{padding-bottom:32px}.alfred-faq{padding-top:36px}}
+

@@ -1,0 +1,5 @@
+"use client";
+import {useEffect,useState} from 'react';
+import {MusicPlayer} from './landing/MusicPlayer';
+export function GlobalMusic(){const [enabled,setEnabled]=useState(true);useEffect(()=>{const sync=()=>{try{setEnabled(localStorage.getItem('alfred-music-enabled')!=='false')}catch{}};sync();window.addEventListener('alfred-music-setting',sync);window.addEventListener('storage',sync);return()=>{window.removeEventListener('alfred-music-setting',sync);window.removeEventListener('storage',sync)}},[]);return enabled?<MusicPlayer active/>:null}
+export function MusicPreference(){const [enabled,setEnabled]=useState(true);useEffect(()=>{try{setEnabled(localStorage.getItem('alfred-music-enabled')!=='false')}catch{}},[]);return <label className="theme-choice"><span>Music player disc</span><button role="switch" aria-label="Music player disc" aria-checked={enabled} className="theme-switch" onClick={()=>{const next=!enabled;setEnabled(next);try{localStorage.setItem('alfred-music-enabled',String(next))}catch{}window.dispatchEvent(new Event('alfred-music-setting'))}}><span/></button></label>}

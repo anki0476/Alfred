@@ -1,0 +1,309 @@
+.learning-shell {
+  max-width: 1120px;
+  margin: auto;
+  padding: 24px 28px 80px;
+  color: var(--ink);
+  font-family: inherit;
+}
+.learning-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 12px 0 24px;
+  border-bottom: 1px solid var(--line);
+}
+.learning-nav a:first-child {
+  font:
+    italic 36px "Instrument Serif",
+    serif;
+  color: var(--accent);
+  margin-right: auto;
+}
+.learning-nav a[aria-current] {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.learning-heading {
+  padding: 46px 0 28px;
+}
+.learning-heading h1 {
+  font:
+    48px/1.1 "Instrument Serif",
+    serif;
+  margin: 14px 0;
+}
+.learning-heading p {
+  margin-top: 12px;
+}
+.learning-muted {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.learning-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px;
+  margin: 22px 0;
+}
+.learning-card h2 {
+  font:
+    32px/1.2 "Instrument Serif",
+    serif;
+  margin-bottom: 16px;
+}
+.learning-card p {
+  margin: 12px 0;
+  line-height: 1.65;
+}
+.learning-row {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.learning-row label {
+  flex: 1;
+}
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+.concept-node {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--background);
+}
+.concept-node.selected {
+  border: 2px solid var(--accent);
+}
+.concept-node h3 {
+  font-size: 17px;
+}
+.concept-node small {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.concept-node strong {
+  font-size: 14px;
+}
+.concept-node progress {
+  width: 100%;
+  height: 8px;
+  accent-color: var(--accent);
+}
+.learning-badge {
+  background: var(--soft);
+  color: var(--accent);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+.learning-card .learning-question {
+  font:
+    26px/1.45 "DM Sans",
+    sans-serif;
+  margin: 20px 0;
+}
+.learning-card fieldset {
+  border: 0;
+  padding: 0;
+  margin: 18px 0;
+}
+.learning-card legend,
+.learning-explanation {
+  font-size: 15px;
+  font-weight: 600;
+}
+.learning-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.learning-option input {
+  margin-top: 5px;
+  accent-color: var(--accent);
+}
+.learning-card textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px 0;
+  background: var(--background);
+  color: var(--ink);
+  resize: vertical;
+}
+.learning-card label > input:not([type="checkbox"]):not([type="radio"]) {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: var(--background);
+}
+.learning-card details {
+  border-top: 1px solid var(--line);
+  padding: 16px 0;
+}
+.learning-card summary {
+  cursor: pointer;
+  font-weight: 500;
+}
+.learning-card blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 8px 16px;
+  margin: 16px 0;
+  overflow-wrap: anywhere;
+}
+.learning-confirm {
+  background: var(--soft);
+  border-radius: 14px;
+  padding: 22px;
+  margin: 18px 0;
+}
+.learning-error {
+  padding: 18px;
+  background: #ffeded;
+  color: #7b2525;
+  border-radius: 12px;
+}
+.learning-card .text-button {
+  display: flex;
+  margin-top: 12px;
+}
+.learn-voice {
+  margin: 18px 0;
+}
+.learn-voice small {
+  display: block;
+  font-size: 13px;
+  margin: 10px 0;
+  color: var(--muted);
+}
+.learn-notch {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  background: #252735;
+  color: #f0edf9;
+  border-radius: 30px;
+  padding: 8px 14px;
+  min-height: 52px;
+  box-shadow: 0 5px 20px #6252a520;
+}
+.learn-avatar {
+  display: grid;
+  place-items: center;
+  background: #b2a2df;
+  color: #252735;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font:
+    italic 30px "Instrument Serif",
+    serif;
+}
+.learn-notch button {
+  background: #b2a2df33;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+.learn-notch meter {
+  width: 55px;
+  accent-color: #b2a2df;
+}
+.learning-table {
+  overflow-x: auto;
+}
+.learning-table table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+}
+.learning-table th,
+.learning-table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.learning-table caption {
+  text-align: left;
+  padding: 12px 0;
+  color: var(--muted);
+}
+.class-code {
+  font-family: monospace;
+  letter-spacing: 2px;
+  user-select: all;
+}
+html[data-theme="dark"] .learning-card {
+  background: #232733;
+}
+html[data-theme="dark"] .learning-shell {
+  color: #eee;
+}
+html[data-theme="dark"] .learning-error {
+  background: #4c2529;
+  color: #ffdddd;
+}
+@media (max-width: 850px) {
+  .concept-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 520px) {
+  .learning-shell {
+    padding: 12px 16px 60px;
+  }
+  .learning-card {
+    padding: 20px;
+  }
+  .learning-nav {
+    gap: 16px;
+    font-size: 14px;
+  }
+  .learning-heading h1 {
+    font-size: 38px;
+  }
+  .concept-grid {
+    grid-template-columns: 1fr;
+  }
+  .learning-card .learning-question {
+    font-size: 21px;
+  }
+}
+
+.learning-graph {
+  overflow-x: auto;
+  color: var(--accent);
+  margin-top: 20px;
+}
+.learning-graph svg {
+  width: 100%;
+  min-width: 620px;
+  display: block;
+}
+.learning-heading-with-mascot{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:32px;align-items:center}.learning-heading-with-mascot .learning-mascot{position:relative;top:auto;right:auto;width:220px;height:190px;margin:0}@media(max-width:700px){.learning-heading-with-mascot{grid-template-columns:1fr;gap:12px}.learning-heading-with-mascot .learning-mascot{justify-self:center;width:200px;height:160px}}

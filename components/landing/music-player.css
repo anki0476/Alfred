@@ -1,0 +1,25 @@
+.music-player{position:fixed;right:24px;bottom:20px;z-index:80;display:flex;align-items:center;gap:15px;padding:14px 18px 12px 12px;border:1px solid #d4dfe5;border-radius:16px;background:#f3f6f8f5;box-shadow:0 5px 20px #26343f12;color:#354650}
+.music-player[hidden]{display:none}.music-player audio{display:none}.music-record-button{position:relative;width:64px;height:64px;padding:0;background:none;border:0;flex:none;cursor:pointer}
+.music-record{position:absolute;inset:0;border:3px solid #26343f;border-radius:50%;overflow:hidden;background:repeating-radial-gradient(circle,#17232c 0 2px,#334550 3px,#17232c 4px);box-shadow:0 3px 6px #0003;animation:record-spin 4s linear infinite;animation-play-state:paused}.is-playing .music-record{animation-play-state:running}
+.music-record::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#ffffff60,transparent 40%,transparent 60%,#ffffff30)}
+.music-label{position:absolute;inset:31%;border-radius:50%;display:grid;place-items:center;background:#aab7ff;color:#3945ff;font-size:21px}.music-label i{position:absolute;width:4px;height:4px;background:#dce4ea;border-radius:50%}
+.music-tonearm{position:absolute;z-index:3;top:-3px;right:-5px;width:39px;height:5px;background:#91a5b4;border-radius:5px;transform-origin:right;transform:rotate(10deg);transition:transform .5s ease;box-shadow:0 1px 2px #0004}.music-tonearm::after{content:'';position:absolute;right:-3px;top:-3px;width:11px;height:11px;border-radius:50%;background:#ccd9e2;border:2px solid #91a5b4}.music-tonearm i{position:absolute;left:0;top:-2px;width:8px;height:9px;background:#26343f;border-radius:3px}.is-playing .music-tonearm{transform:rotate(-20deg)}
+.music-play-icon{position:absolute;bottom:0;right:0;z-index:4;background:#edf3f7;border:1px solid #a8bac5;border-radius:50%;width:23px;height:23px;display:grid;place-items:center;font-size:10px}.music-settings{width:105px;display:flex;flex-direction:column;gap:4px}.music-title{font-size:11px;font-weight:600;letter-spacing:.06em}.music-status{font-size:10px;color:#687d89}.music-settings label{display:flex;gap:5px;align-items:center;font-size:10px}.music-settings input{width:62px;min-width:0;accent-color:#7987b7;cursor:pointer;height:24px;margin:0}
+@keyframes record-spin{to{transform:rotate(360deg)}}
+@media(max-width:759px){.music-player{right:12px;bottom:12px;padding:10px 12px;gap:12px}.music-record-button{width:52px;height:52px}main.home.contact-home,main.home.about-home,main.home.projects-home:has(.has-selection){padding-bottom:128px}.home .controls{padding-right:0}}
+@media(prefers-reduced-motion:reduce){.music-record{animation:none}.music-tonearm{transition:none}}
+
+/* Compact disc at rest; reveal the island on hover, focus, or touch focus. */
+.music-player{gap:0;padding:8px;border-color:transparent;background:transparent;box-shadow:none;border-radius:14px;transition:background .25s,border-color .25s,box-shadow .25s}
+.music-record-button{width:44px;height:44px}.music-label{font-size:16px}.music-record{border-width:2px}
+.music-settings{width:0;opacity:0;visibility:hidden;overflow:hidden;margin-left:0;white-space:nowrap;transition:width .25s,opacity .2s,margin-left .25s,visibility .25s}
+.music-tonearm,.music-play-icon{opacity:0;transition:opacity .2s,transform .5s}.music-tonearm{width:27px;height:4px;right:-2px;top:-1px}.music-tonearm::after{width:8px;height:8px}.music-tonearm i{width:6px;height:7px}.music-play-icon{width:18px;height:18px;font-size:8px}
+.music-player:hover,.music-player:has(:focus-visible){background:#f3f6f8f5;border-color:#d4dfe5;box-shadow:0 4px 16px #26343f12}
+.music-player:hover .music-settings,.music-player:has(:focus-visible) .music-settings{width:100px;margin-left:12px;opacity:1;visibility:visible}
+.music-player:hover .music-tonearm,.music-player:has(:focus-visible) .music-tonearm,.music-player:hover .music-play-icon,.music-player:has(:focus-visible) .music-play-icon{opacity:1}
+@media(prefers-reduced-motion:reduce){.music-player,.music-settings,.music-tonearm,.music-play-icon{transition:none}}
+@media(hover:none){.music-player:focus-within{background:#f3f6f8f5;border-color:#d4dfe5}.music-player:focus-within .music-settings{width:100px;margin-left:12px;opacity:1;visibility:visible}.music-player:focus-within .music-play-icon,.music-player:focus-within .music-tonearm{opacity:1}}
+
+.music-player{bottom:125px;right:24px}.music-player button{min-height:0;box-shadow:none}.music-player .music-settings{font-family:Arial,sans-serif}.music-player .music-title{font-size:12px}.music-player .music-status,.music-player .music-settings label{font-size:12px}@media(max-width:700px){.music-player{bottom:18px;right:12px}}
+
+.music-player { bottom: max(20px, env(safe-area-inset-bottom)); right: 20px; }

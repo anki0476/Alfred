@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+const origin = process.argv[2] || 'http://127.0.0.1:5174';
+if (!/^http:\/\/(127\.0\.0\.1|localhost):\d+$/.test(origin)) throw new Error('Run against the local preview only.');
+const login = await fetch(`${origin}/api/alfred`);
+const cookie = login.headers.getSetCookie().map(value => value.split(';')[0]).join('; ');
+assert.ok(cookie, 'Guest bootstrap must provide a visitor cookie.');
+const source = 'Aster garden notes. The Aster seed needs five days in damp soil before sprouting. The roots absorb water from the soil. Leaves capture light for photosynthesis. Water and light have different roles. An Aster plant with dry soil needs water at its roots, not more light.';
+async function request(operation, extra = {}, options = {}) {
+  const form = new FormData(); form.set('operation', operation);
+  form.set('file', new Blob([options.source ?? source], { type: 'text/plain' }), options.filename || 'aster-notes.txt');
+  for (const [key, value] of Object.entries(extra)) form.set(key, value);
+  return fetch(`${origin}/api/material-practice`, { method: 'POST', headers: { ...(options.anonymous ? {} : { Cookie: cookie }), Origin: options.origin || origin }, body: form });
+}
+assert.equal((await request('generate', {}, { anonymous: true, filename: 'bad.pdf' })).status, 400);
+assert.equal((await request('generate', {}, { origin: 'https://unrelated.example' })).status, 403);
+assert.equal((await request('generate', {}, { filename: 'bad.pdf' })).status, 400);
+assert.equal((await request('generate', {}, { filename: 'bad.html' })).status, 415);
+console.log('Guest access, origin and file validation checks passed.');
+const generated = await request('generate', { focus: 'Ask about the Aster plant’s roots and water needs.' });
+const questions = await generated.json();
+assert.equal(generated.status, 200, questions.error);
+assert.equal(questions.status, 'ready');
+assert.ok(questions.questions.length);
+for (const q of questions.questions) for (const evidence of q.evidence) assert.ok(source.includes(evidence.quote));
+console.log(`Generated ${questions.questions.length} questions with verified source quotations.`);
+const assessed = await request('feedback', { question: questions.questions[0].question, answer: 'Roots absorb water from the soil. When the soil is dry, more light cannot replace watering the roots.' });
+const feedback = await assessed.json();
+assert.equal(assessed.status, 200, feedback.error);
+assert.equal(feedback.status, 'ready');
+assert.ok(feedback.feedback.guidance);
+assert.ok(feedback.feedback.evidence.length);
+for (const evidence of feedback.feedback.evidence) assert.ok(source.includes(evidence.quote));
+console.log(`Received grounded feedback (${feedback.feedback.assessment}).`);
